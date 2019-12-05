@@ -1,0 +1,27 @@
+{
+    "name": "kazuakim/jetoo",
+    "description": "Cross-language URL classifier library, PHP implementation",
+    "keywords": [
+        "url"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Kazuaki Mabuchi",
+            "email": "kazuakim.public@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 5.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jetoo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jetoo\\": "tests/Jetoo/"
+        }
+    }
+}

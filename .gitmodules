@@ -1,0 +1,3 @@
+[submodule "jetoo"]
+	path = jetoo
+	url = git@github.com:KazuakiM/jetoo.git
