@@ -45,6 +45,8 @@ class Classifier
      * @param array $result
      *
      * @return array
+     *
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     private static function fillResult(array $result): array
     {
