@@ -1,0 +1,42 @@
+name: PHP Composer
+on:
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: "0 2 * * 1"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install php-ast
+      run: |
+        cd .phan
+        git clone https://github.com/nikic/php-ast
+        cd php-ast
+        phpize
+        ./configure
+        make
+        sudo make install
+        echo 'extension=ast.so' | sudo tee -a /etc/php/7.3/cli/conf.d/20-ast.ini
+
+    - name: Composer parallel install plugin.
+      run: composer global require hirak/prestissimo
+
+    - name: Install checking Library.
+      run: |
+        cd .github/workflows
+        composer install
+
+    - name: PHP CS Fixer
+      run: composer csfixerdry
+
+    - name: PHPMD
+      run: composer phpmd
+
+    - name: Phan
+      run: composer phan
