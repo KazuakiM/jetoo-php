@@ -12,7 +12,22 @@
         }
     ],
     "require": {
-        "php": ">= 5.3.3"
+        "php": ">= 7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "symfony/yaml": "^5.0"
+    },
+    "archive": {
+        "exclude": [
+            ".github",
+            ".gitmodules",
+            ".phan",
+            "jetoo",
+            "phpunit.xml.dist",
+            "tests",
+            "vendor"
+        ]
     },
     "autoload": {
         "psr-4": {
@@ -28,6 +43,8 @@
         "csfixer":     "php .github/workflows/vendor/bin/php-cs-fixer fix --verbose --config=.github/workflows/php_cs.dist --stop-on-violation",
         "csfixerdry":  "php .github/workflows/vendor/bin/php-cs-fixer fix --verbose --config=.github/workflows/php_cs.dist --stop-on-violation --dry-run",
         "phan":        "php .github/workflows/vendor/bin/phan --debug",
-        "phpmd":       "php .github/workflows/vendor/bin/phpmd src xml .github/workflows/phpmd.xml"
+        "phpmd":       "php .github/workflows/vendor/bin/phpmd src xml .github/workflows/phpmd.xml",
+        "phpunit":     "php vendor/bin/phpunit --configuration phpunit.xml",
+        "phpunitci":   "phpunit --configuration phpunit.xml"
     }
 }
