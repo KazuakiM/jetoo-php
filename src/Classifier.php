@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Jetoo;
 
 class Classifier
 {
-    const VERSION = '0.0.1';
+    public const VERSION = '0.0.1';
 
     /**
      * parse

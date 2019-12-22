@@ -40,3 +40,6 @@ jobs:
 
     - name: Phan
       run: composer phan
+
+    - name: PHPUnit
+      run: composer phpunitci

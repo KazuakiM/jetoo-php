@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.github.com/sebastianbergmann/phpunit/master/phpunit.xsd"
+    bootstrap="tests/bootstrap.php"
+    cacheResult="true"
+    cacheResultFile="phpunit.result.cache"
+    colors="true"
+    verbose="true">
+  <filter>
+    <whitelist>
+      <directory suffix=".php">src/</directory>
+    </whitelist>
+  </filter>
+  <testsuites>
+    <testsuite name="Jetoo Test Suite">
+      <directory>./tests/Jetoo/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
